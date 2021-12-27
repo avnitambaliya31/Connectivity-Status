@@ -1,0 +1,54 @@
+class _NoInternetState extends State<NoInternet> {
+  bool isConnectionButton = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 300,
+              width: 300,
+              margin: EdgeInsets.fromLTRB(0, 0, 0, 25),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/not_connection.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Text(
+              "No Internet Connection",
+              style: TextStyle(
+                fontFamily: "AirbnbCereal",
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Text(
+                "You are not connected to the internet. Make sure Wi-Fi & Cellular data is on, Airplane Mode is Off and try again.",
+                style: TextStyle(
+                    fontFamily: "AirbnbCereal",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            CircularProgressIndicator(
+              color: splashBackgroundColor,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
